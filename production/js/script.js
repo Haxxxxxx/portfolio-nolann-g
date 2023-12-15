@@ -376,17 +376,27 @@ function updateDisplay(elementId) {
 
 //#region Progress Bar
 // Calculate the percentage completion
-const currentValue = 128;
-const maxValue = 365;
-const percentage = (currentValue / maxValue) * 100;
+// Définir les dates de départ et de fin
+const startDate = new Date('2023-01-01'); // Date de départ
+const endDate = new Date('2023-12-31'); // Date de fin
 
-// Calculate the width based on the maximum width of 100px
-const maxWidth = 100; // Maximum width in pixels
-const calculatedWidth = (percentage / 100) * maxWidth;
+// Calculer la durée totale et la progression
+const totalDuration = endDate - startDate;
+const currentTime = new Date() - startDate;
+const progressPercentage = (currentTime / totalDuration) * 100;
 
-// Set the width of the progress bar
-document.getElementById('progress_bar').style.width = calculatedWidth + 'px';
-document.getElementById('progress_bar2').style.width = calculatedWidth + 'px';
+// Fonction pour mettre à jour une barre de progression
+function updateProgressBar(progressBarId) {
+    const progressBar = document.getElementById(progressBarId);
+    if (progressBar) {
+        progressBar.style.width = `${progressPercentage}%`;
+        progressBar.style.backgroundcolor = '#10abf7'; 
+    }
+}
+
+// Mettre à jour les barres de progression
+updateProgressBar('progress_bar');
+updateProgressBar('progress_bar2');
 
 
 //#endregion
