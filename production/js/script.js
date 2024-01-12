@@ -374,12 +374,6 @@ function updateDisplay(elementId) {
         
 //#endregion
 
-//#region Progress Bar
-// Calculate the percentage completion
-// Définir les dates de départ et de fin
-
-//#endregion
-
 //#region loader
 document.addEventListener("DOMContentLoaded", function() {
   setTimeout(function() {
