@@ -377,27 +377,6 @@ function updateDisplay(elementId) {
 //#region Progress Bar
 // Calculate the percentage completion
 // Définir les dates de départ et de fin
-const startDate = new Date('2023-07-01'); // Date de départ
-const endDate = new Date('2024-07-01'); // Date de fin
-
-// Calculer la durée totale et la progression
-const totalDuration = endDate - startDate;
-const currentTime = new Date() - startDate;
-const progressPercentage = (currentTime / totalDuration) * 100;
-
-// Fonction pour mettre à jour une barre de progression
-function updateProgressBar(progressBarId) {
-    const progressBar = document.getElementById(progressBarId);
-    if (progressBar) {
-        progressBar.style.width = `${progressPercentage}%`;
-        progressBar.style.backgroundColor = '#10abf7;';
-    }
-}
-
-// Mettre à jour les barres de progression
-updateProgressBar('progress_bar');
-updateProgressBar('progress_bar2');
-
 
 //#endregion
 
